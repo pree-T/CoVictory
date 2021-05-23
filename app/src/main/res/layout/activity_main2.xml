@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".oximeter.MainActivity2"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingStart="64dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="64dp"
+    android:paddingBottom="16dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="175dp"
+        app:srcCompat="@drawable/mobile_oximeter" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.88"
+        android:fontFamily="@font/abril_fatface"
+        android:includeFontPadding="true"
+        android:padding="10dp"
+        android:text="Place your index finger on \n the rear camera \n make sure it fully covers the camera as shown in the image \n Don't move your finger untill \n the process is completed"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="0.17"/>
+    <Button
+        android:id="@+id/startbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Measurement Start"
+        android:padding="15dp"
+        android:layout_marginBottom="65dp"/>
+
+
+
+
+</LinearLayout>
