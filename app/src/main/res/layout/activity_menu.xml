@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="5dp"
     tools:context=".MenuActivity">
 
     <LinearLayout
@@ -17,12 +18,11 @@
             android:orientation="vertical"
             tools:ignore="UseCompoundDrawables">
 
-            <ImageView
-                android:layout_width="200dp"
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="300dp"
                 android:layout_height="250dp"
                 android:layout_gravity="center"
-                android:contentDescription="TODO"
-                app:srcCompat="@drawable/antivirus" />
+                android:src="@drawable/coronaaware" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -42,64 +42,33 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/covid_symptoms"
+                android:id="@+id/beds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
+                    android:layout_width="185dp"
+                    android:layout_height="175dp"
                     android:contentDescription="TODO"
-                    app:srcCompat="@drawable/iconfinder_corona_virus_6049176" />
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/beds" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Covid Symptoms"
+                    android:text="Hospital Beds"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/food"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                tools:ignore="UseCompoundDrawables">
-
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-
-                    android:contentDescription="TODO"
-                    app:srcCompat="@drawable/food" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Food"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/oxygen"
@@ -110,7 +79,7 @@
 
                 <ImageView
                     android:layout_width="180dp"
-                    android:layout_height="172dp"
+                    android:layout_height="155dp"
                     android:layout_margin="10dp"
                     android:contentDescription="TODO"
                     app:srcCompat="@drawable/oxy" />
@@ -124,41 +93,20 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
+
             </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/medicine"
-            android:layout_width="168dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="192dp"
-                android:contentDescription="TODO"
-                app:srcCompat="@drawable/med2" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Medicine"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
 
         </LinearLayout>
 
-
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/doc"
+                android:id="@+id/medicines"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -166,15 +114,15 @@
 
                 <ImageView
                     android:layout_width="200dp"
-                    android:layout_height="172dp"
-                    android:layout_margin="10dp"
+                    android:layout_height="175dp"
                     android:contentDescription="TODO"
-                    app:srcCompat="@drawable/doc" />
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/med2" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Doctors Consultation"
+                    android:text="Medicine"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -182,32 +130,38 @@
 
             </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/oximeter"
-            android:layout_width="168dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="190dp"
-                android:contentDescription="TODO"
-                app:srcCompat="@drawable/oximeter" />
-
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/oximeter"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Oximeter"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="175dp"
+                    android:contentDescription="TODO"
+                    app:srcCompat="@drawable/oximeter" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Domestic Oximeter"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
 
+
+
         </LinearLayout>
-    </LinearLayout>
+
 
 </androidx.core.widget.NestedScrollView>

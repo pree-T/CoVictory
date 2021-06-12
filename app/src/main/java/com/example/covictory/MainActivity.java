@@ -1,12 +1,16 @@
 package com.example.covictory;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.covictory.api.ApiUtilities;
@@ -38,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         list = new ArrayList<>();
+        ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Please wait,fetching data for you");
+        progressDialog.setMessage("Loading...");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+
+        progressDialog.show();
+        progressDialog.setCancelable(false);
 
 
         init();
@@ -45,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         ApiUtilities.getApiInterface().getCountryData().enqueue(new Callback<List<CountryData>>() {
             @SuppressLint("SetTextI18n")
             @Override
-            public void onResponse(Call<List<CountryData>> call, Response<List<CountryData>> response) {
+            public void onResponse(@NonNull Call<List<CountryData>> call, @NonNull Response<List<CountryData>> response) {
                 assert response.body() != null;
                 list.addAll(response.body());
                 for (int i = 0; i < list.size(); i++) {
@@ -79,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                         pieChart.addPieSlice(new PieModel("Deaths", deaths, getResources().getColor(R.color.red_pie)));
                     }
                 }
+                progressDialog.dismiss();
+
 
                 morebtn.setOnClickListener(v -> {
                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
@@ -88,8 +101,31 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<CountryData>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<CountryData>> call, @NonNull Throwable t) {
+                progressDialog.dismiss();
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 Toast.makeText(MainActivity.this, "Unable to fetch data", Toast.LENGTH_SHORT).show();
+
+                //Setting the title manually
+
+                builder.setMessage("Please Check your Internet Connection and try again")
+                .setCancelable(false)
+                .setPositiveButton("Yes Okay", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .setNegativeButton("No,thanks!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        finish();
+
+                    }
+                });
+                builder.show();
+
 
             }
         });

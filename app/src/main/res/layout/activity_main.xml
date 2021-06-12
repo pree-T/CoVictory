@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -17,24 +18,24 @@
             android:layout_height="200dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="-30dp"
-            app:srcCompat="@drawable/pngtreeconcept_vector_illustration_of_corona_5379172"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/pngtreeconcept_vector_illustration_of_corona_5379172" />
 
         <ImageView
             android:id="@+id/virus"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentEnd="true"
-            app:srcCompat="@drawable/pngtreeconcept_vector_illustration_of_corona_5379172"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/pngtreeconcept_vector_illustration_of_corona_5379172" />
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="50dp"
             android:layout_toStartOf="@id/virus"
-            app:srcCompat="@drawable/pngtreeconcept_vector_illustration_of_corona_5379172"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/pngtreeconcept_vector_illustration_of_corona_5379172" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -55,11 +56,11 @@
                 android:textSize="@dimen/text_size" />
 
             <TextView
+                android:id="@+id/countryName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/boogaloo"
                 android:text="India"
-                android:id="@+id/countryName"
                 android:textColor="@color/white"
                 android:textSize="@dimen/title_size3"
                 android:textStyle="bold" />
@@ -210,375 +211,392 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
-        <GridLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
-            android:columnCount="2"
+            android:orientation="vertical"
             android:paddingHorizontal="12dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="@dimen/card_width"
-                android:layout_height="match_parent"
-                android:layout_columnWeight="1"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:padding="12dp"
-                android:layout_rowWeight="1"
-                app:strokeColor="@color/color_primary"
-                app:strokeWidth="1dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/card_width"
                     android:layout_height="match_parent"
-                    android:layout_margin="18dp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/yellow" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/boogaloo"
-                            android:text="Confirm Cases"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/text_size0"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/totalConfirm"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/boogaloo"
-                        android:text="4686758"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/title_size0"
-                        android:textStyle="bold" />
-
-
-                    <TextView
-                        android:id="@+id/todayConfirm"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/boogaloo"
-                        android:text="(+32)"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/title_size0" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="@dimen/card_width"
-                android:layout_height="match_parent"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:padding="12dp"
-                app:strokeColor="@color/color_primary"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="18dp"
-                    android:orientation="vertical">
-
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    app:layout_gravity="center"
+                    app:strokeColor="@color/color_primary"
+                    app:strokeWidth="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:layout_margin="18dp"
+                        android:orientation="vertical">
 
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/blue_pie" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/yellow" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:fontFamily="@font/boogaloo"
+                                android:text="Confirm Cases"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size0"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
 
                         <TextView
+                            android:id="@+id/totalConfirm"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
+                            android:layout_marginTop="7dp"
                             android:fontFamily="@font/boogaloo"
-                            android:text="@string/active"
+                            android:text="XXX"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/text_size0"
+                            android:textSize="@dimen/title_size0"
                             android:textStyle="bold" />
 
 
+                        <TextView
+                            android:id="@+id/todayConfirm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/boogaloo"
+                            android:text="(+X)"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_size0" />
+
                     </LinearLayout>
 
+                </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/totalActive"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/boogaloo"
-                        android:text="678932"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/title_size0" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/boogaloo"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/title_size0" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="@dimen/card_width"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:padding="12dp"
-                app:strokeColor="@color/color_primary"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/card_width"
                     android:layout_height="match_parent"
-                    android:layout_margin="18dp"
-                    android:orientation="vertical">
-
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    app:layout_gravity="center"
+                    app:strokeColor="@color/color_primary"
+                    app:strokeWidth="1dp">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/green_pie" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/boogaloo"
-                            android:text="Recovered"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/text_size0"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/totalRecover"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/boogaloo"
-                        android:text="4686758"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/title_size0"
-                        android:textStyle="bold" />
-
-
-                    <TextView
-                        android:id="@+id/todayRecover"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/boogaloo"
-                        android:text="(+32)"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/title_size0" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="@dimen/card_width"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:padding="12dp"
-                app:strokeColor="@color/color_primary"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="18dp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/red_pie" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/boogaloo"
-                            android:text="Total Deaths"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/text_size0"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/totalDeaths"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/boogaloo"
-                        android:text="4686758"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/title_size0"
-                        android:textStyle="bold" />
-
-
-                    <TextView
-                        android:id="@+id/todayDeaths"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/boogaloo"
-                        android:text="(+32)"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/title_size0" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="@dimen/card_width"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:padding="12dp"
-                app:strokeColor="@color/color_primary"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="18dp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/pink" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/boogaloo"
-                            android:text="Tests conducted"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/text_size0"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/Tests"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/boogaloo"
-                        android:text="4686758"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/title_size0"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView> <com.google.android.material.card.MaterialCardView
-                android:layout_width="@dimen/card_width"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:padding="12dp"
-                app:strokeColor="@color/color_primary"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="18dp"
-                    android:orientation="vertical">
-                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="More"
-                        android:backgroundTint="@color/yellow"
-                        android:id="@+id/btn"/>
+                        android:layout_margin="18dp"
+                        android:orientation="vertical">
 
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/blue_pie" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:fontFamily="@font/boogaloo"
+                                android:text="@string/active"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size0"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/totalActive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/boogaloo"
+                            android:text="XXXX"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_size0" />
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/card_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    app:layout_gravity="center"
+                    app:strokeColor="@color/color_primary"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="18dp"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/green_pie" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:fontFamily="@font/boogaloo"
+                                android:text="Recovered"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size0"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/totalRecover"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/boogaloo"
+                            android:text="XXXXX"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_size0"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/todayRecover"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/boogaloo"
+                            android:text="(+X)"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_size0" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/card_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    app:layout_gravity="center"
+                    app:strokeColor="@color/color_primary"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="18dp"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/red_pie" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:fontFamily="@font/boogaloo"
+                                android:text="Total Deaths"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size0"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/totalDeaths"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/boogaloo"
+                            android:text="XXXXX"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_size0"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/todayDeaths"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/boogaloo"
+                            android:text="(+X)"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_size0" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/card_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    app:layout_gravity="center"
+                    app:strokeColor="@color/color_primary"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="18dp"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/pink" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:fontFamily="@font/boogaloo"
+                                android:text="Tests conducted"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size0"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/Tests"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/boogaloo"
+                            android:text="XXXX"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_size0"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/card_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    app:layout_gravity="center"
+                    app:strokeColor="@color/color_primary"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="18dp"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="@color/yellow"
+                            android:text="More" />
 
 
                     </LinearLayout>
 
 
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
 
 
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-        </GridLayout>
+        </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 

@@ -1,9 +1,5 @@
 package com.example.covictory;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -12,13 +8,17 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.example.covictory.databinding.ActivityFoodBinding;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.covictory.databinding.ActivityOxygenBinding;
 
 import java.util.ArrayList;
 
 public class Oxygen extends AppCompatActivity {
 
-    ActivityFoodBinding binding;
+    ActivityOxygenBinding binding;
     ArrayList<String> state;
 
 
@@ -41,8 +41,7 @@ public class Oxygen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_oxygen);
-        binding = ActivityFoodBinding.inflate(getLayoutInflater());
+        binding = ActivityOxygenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         spinner_state = findViewById(R.id.spinner_state);
         spinner_city = findViewById(R.id.spinner_city);
@@ -110,19 +109,36 @@ public class Oxygen extends AppCompatActivity {
 
         city_jhar = new ArrayList<>();
         city_jhar.add("Jamshedpur");
-        city_jhar.add("Adityapur");
-        city_jhar.add("Ghatsila");
+        city_jhar.add("Dhanbad");
+        city_jhar.add("Ranchi");
+        city_jhar.add("Bokaro");
 
         city_wb = new ArrayList<>();
-        city_wb.add("Kolkata");
-        city_wb.add("Bankura");
+        city_wb.add("Asansoal");
+        city_wb.add("Baranagar");
+        city_wb.add("Durgapur");
+        city_wb.add("Kolakata");
         city_wb.add("Purulia");
+        city_wb.add("Krishnanagar");
+        city_wb.add("Kolakata");
+        city_wb.add("North 24 Parganas");
+        city_wb.add("Siliguri");
+
+
 
 
         city_bihar = new ArrayList<>();
         city_bihar.add("Patna");
-        city_bihar.add("Darbhanga");
+        city_bihar.add("Begusarai");
         city_bihar.add("Bhagalpur");
+        city_bihar.add("Buxar");
+        city_bihar.add("Champaran");
+        city_bihar.add("Darbhanga");
+        city_bihar.add("Gaya");
+        city_bihar.add("Gopalganj");
+        city_bihar.add("Muzaffarpur");
+
+
 
 
     }

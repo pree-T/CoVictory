@@ -15,7 +15,6 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
     ArrayList<ModelClass> dataholder;
 
 
-    ModelClass model;
     public int currpos;
 
     public myadapter(ArrayList<ModelClass> dataholder) {

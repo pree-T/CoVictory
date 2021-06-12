@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "CovidResources.db";
+    public static final String DATABASE_NAME = "CovidResources3.db";
     public static final String DATABASE_TABLE = "Food";
     public static final String col_state = "State";
     public static final String col_city = "City";
@@ -23,7 +23,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     public DbHelper(Context context) {
-        super(context,DATABASE_NAME,null,5);
+        super(context,DATABASE_NAME,null,6);
 
     }
 

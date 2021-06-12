@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,6 +30,7 @@ public class OxygenProcess extends AppCompatActivity {
 
     private static final String TAG="OxygenMeasure";
     private static final AtomicBoolean processing=new AtomicBoolean(false);
+    TextView oxy_level;
 
     private static  Camera camera=null;
     private static SurfaceHolder previewHolder=null;
@@ -46,12 +48,17 @@ public class OxygenProcess extends AppCompatActivity {
     public ArrayList<Double> RedAvgList= new ArrayList<>();
     public ArrayList<Double> BlueAvgList= new ArrayList<>();
     public int counter=0;
+    int flag=0;
+
 
     @SuppressLint("InvalidWakeLockTag")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oxygen_process);
+
+
+
 
         SurfaceView preview = findViewById(R.id.preview);
         previewHolder= preview.getHolder();
@@ -60,13 +67,14 @@ public class OxygenProcess extends AppCompatActivity {
         ProgO2 = findViewById(R.id.o2pb);
         ProgO2.setProgress(0);
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "NOTDIMSCREEN");
+        wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "DONOTDIMSCREEN");
     }
 
     @Override
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
     }
+
 
     @Override
     protected void onResume() {
@@ -146,11 +154,14 @@ public class OxygenProcess extends AppCompatActivity {
                     inc=0;
                     ProgP=inc;
                     ProgO2.setProgress(ProgP);
-                    Toast mainToast = Toast.makeText(getApplicationContext(), "Measurement Failure ,showing previous reading", Toast.LENGTH_LONG);
+                    Toast mainToast = Toast.makeText(getApplicationContext(), "Measurement Failure", Toast.LENGTH_LONG);
                     mainToast.show();
+                    flag=1;
                     startTime=System.currentTimeMillis();
                     counter=0;
                     processing.set(false);
+
+
                     return;
                 }
 
@@ -159,7 +170,10 @@ public class OxygenProcess extends AppCompatActivity {
             if(o2!=0)
             {
                 Intent i=new Intent(OxygenProcess.this,OxygenCalculate.class);
+                if(flag!=1)
                 i.putExtra("o2r",o2);
+                else
+                    i.putExtra("o2r",0);
                 startActivity(i);
                 finish();
             }

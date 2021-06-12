@@ -22,7 +22,7 @@ public class OxygenCalculate extends AppCompatActivity {
     @SuppressLint("SimpleDateFormat")
     DateFormat df=new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
     Date today= Calendar.getInstance().getTime();
-    int o2;
+    int o2;String errmsg="Place your finger properly and try again";
 
 
     @Override
@@ -31,7 +31,7 @@ public class OxygenCalculate extends AppCompatActivity {
         setContentView(R.layout.activity_oxygen_calculate);
         Date =df.format(today);
         TextView Ro2=this.findViewById(R.id.o2r);
-        Button So2=this.findViewById(R.id.SendO2);
+       // Button So2=this.findViewById(R.id.SendO2);
 
 
 
@@ -40,9 +40,12 @@ public class OxygenCalculate extends AppCompatActivity {
         if(bundle!=null)
         {
             o2=bundle.getInt("o2r");
-            Ro2.setText(String.valueOf(o2));
+            if(o2==0)
+                Ro2.setText(errmsg);
+            else
+             Ro2.setText(String.valueOf(o2));
         }
-        So2.setOnClickListener(v -> {
+        /*So2.setOnClickListener(v -> {
             Intent i=new Intent(Intent.ACTION_SEND);
             i.setType("message/rfc822");
             i.putExtra(Intent.EXTRA_SUBJECT,"Oxygen Meter");
@@ -56,7 +59,7 @@ public class OxygenCalculate extends AppCompatActivity {
             }
 
 
-        });
+        });*/
 
     }
     @Override

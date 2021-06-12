@@ -11,22 +11,29 @@ import com.example.covictory.oximeter.MainActivity2;
 public class MenuActivity extends AppCompatActivity {
 
 
-    LinearLayout covid, food,oximeter;
+    LinearLayout beds,oximeter,oxygen,medicine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        covid = findViewById(R.id.covid_symptoms);
-        food = findViewById(R.id.food);
-        oximeter = findViewById(R.id.oximeter);
+        beds = findViewById(R.id.beds);
 
-        covid.setOnClickListener(v -> {
-            Intent intent = new Intent(MenuActivity.this, Covid.class);
+        oximeter = findViewById(R.id.oximeter);
+        oxygen=findViewById(R.id.oxygen);
+        medicine=findViewById(R.id.medicines);
+
+        beds.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, Beds.class);
             startActivity(intent);
         });
-        food.setOnClickListener(v -> {
-            Intent intent = new Intent(MenuActivity.this, Food.class);
+
+        oxygen.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, Oxygen.class);
+            startActivity(intent);
+        });
+        medicine.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, Medicine.class);
             startActivity(intent);
         });
         oximeter.setOnClickListener(v -> {

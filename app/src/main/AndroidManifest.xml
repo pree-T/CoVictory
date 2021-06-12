@@ -21,19 +21,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoVictory">
-        <activity android:name=".Oxygen"></activity>
-        <activity android:name=".Food" />
-        <activity android:name=".Covid" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".oximeter.OxygenProcess" />
-        <activity android:name=".oximeter.OxygenCalculate" />
-        <activity android:name=".oximeter.MainActivity2" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Beds" />
+        <activity android:name=".Medicine" />
+        <activity android:name=".Oxygen" />
+        <activity android:name=".Food" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".oximeter.OxygenProcess" />
+        <activity android:name=".oximeter.OxygenCalculate" />
+        <activity android:name=".oximeter.MainActivity2" />
+        <activity android:name=".MainActivity">
+
         </activity>
 
         <meta-data
